@@ -21,7 +21,7 @@ var trello = new Trello({
 - `trello.key`: [Get your developer key here](https://trello.com/1/appKey/generate)
 - `trello.token`: Generate your token. `<PUBLIC_KEY>` is the value from the previous step
     - Short term: `https://trello.com/1/connect?name=MyApp&response_type=token&key=<PUBLIC_KEY>`
-    - No expiration: `https://trello.com/1/connect?name=MyApp&response_type=token&expriation=never&key=<PUBLIC_KEY>`
+    - No expiration: `https://trello.com/1/connect?name=MyApp&response_type=token&expiration=never&key=<PUBLIC_KEY>`
 
 ## Events Emitted
 
