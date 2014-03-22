@@ -73,7 +73,7 @@ function getBoardActivity(boardId){
 			e.emit(eventType, boardActions[ix], boardId);
 		}
 
-		config.maxId = Math.max(config.minId, actionId);
+		config.minId = Math.max(config.minId, actionId);
 		e.emit('maxId', config.minId);
 	});
 }
