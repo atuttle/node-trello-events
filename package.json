@@ -12,8 +12,8 @@
   "author": "Adam Tuttle",
   "license": "MIT",
   "dependencies": {
-    "trello": "^0.1.0",
-    "extend": "^1.2.1"
+    "extend": "^1.2.1",
+    "node-trello": "^0.1.4"
   },
   "directories": {
     "test": "test"
