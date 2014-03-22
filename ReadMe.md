@@ -18,10 +18,10 @@ var trello = new Trello({
 - `pollFrequency`: frequency in milliseconds that the Trello api is polled
 - `minId`: The minimum id value at which to start emitting events (more on this later)
 - `trello.boards`: array of trello board id's to watch (get them from the URL)
-- `trello.key`: [Get your developer key here](https://trello.com/1/appKey/generate)
+- `trello.key`: [Get your developer (public) key here](https://trello.com/1/appKey/generate)
 - `trello.token`: Generate your token. `<PUBLIC_KEY>` is the value from the previous step
-    - Short term: `https://trello.com/1/connect?name=MyApp&response_type=token&key=<PUBLIC_KEY>`
-    - No expiration: `https://trello.com/1/connect?name=MyApp&response_type=token&expiration=never&key=<PUBLIC_KEY>`
+    - Short term: `https://trello.com/1/connect?name=trello-events&response_type=token&key=<PUBLIC_KEY>`
+    - No expiration: `https://trello.com/1/connect?name=trello-events&response_type=token&expiration=never&key=<PUBLIC_KEY>`
 
 ## Events Emitted
 
