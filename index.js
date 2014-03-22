@@ -17,7 +17,9 @@ module.exports = function(options){
 	e = new EventEmitter();
 	config = extend(true, defaults, options);
 	trello = new Trello(config.trello.key, config.trello.token);
-	start();
+	process.nextTick(function(){
+		start(config.pollFrequency, true);
+	});
 
 	var self = {
 		on: function(event, listener){
