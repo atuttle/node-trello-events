@@ -3,7 +3,7 @@ var Trello = require('node-trello')
 	,extend = require('extend')
 	,config,trello,timer,e;
 
-module.exports = function(config){
+module.exports = function(options){
 	var defaults = {
 		pollFrequency: 1000*60
 		,minId: 0
@@ -15,7 +15,7 @@ module.exports = function(config){
 		}
 	};
 	e = new EventEmitter();
-	config = extend(true, defaults, config);
+	config = extend(true, defaults, options);
 	trello = new Trello(config.trello.key, config.trello.token);
 	start();
 
@@ -24,8 +24,14 @@ module.exports = function(config){
 			e.on(event, listener);
 			return self;
 		}
-		,start: start
-		,stop: stop
+		,start: function(){
+			start();
+			return self;
+		}
+		,stop: function(){
+			stop();
+			return self;
+		}
 		,api: trello
 	};
 	return self;
