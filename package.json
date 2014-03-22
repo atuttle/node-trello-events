@@ -1,6 +1,6 @@
 {
   "name": "trello-events",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Event based polling of trello board activity",
   "main": "index.js",
   "keywords": [
