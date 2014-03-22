@@ -11,9 +11,6 @@
   ],
   "author": "Adam Tuttle",
   "license": "MIT",
-  "devDependencies": {
-    "mocha": "^1.18.2"
-  },
   "dependencies": {
     "trello": "^0.1.0",
     "extend": "^1.2.1"

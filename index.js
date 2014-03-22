@@ -24,8 +24,8 @@ module.exports = function(options){
 			e.on(event, listener);
 			return self;
 		}
-		,start: function(){
-			start();
+		,start: function(frequency, immediate){
+			start(frequency, immediate);
 			return self;
 		}
 		,stop: function(){
@@ -39,9 +39,13 @@ module.exports = function(options){
 
 //=================================================
 
-function start(frequency){
+function start(frequency, immediate){
+	if (timer) { return; }
 	frequency = frequency || config.pollFrequency;
 	timer = setInterval(poll, frequency);
+	if (immediate){
+		poll();
+	}
 }
 function stop(){
 	clearInterval(timer);
