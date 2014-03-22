@@ -7,6 +7,7 @@ var Trello = require('trello-events');
 var trello = new Trello({
 	pollFrequency: 1000*60
 	,minId: 0
+	,start: true
 	,trello: {
 		boards: ['Nz5nyqZg','...']
 		,key: 'your-trello-api-key'
@@ -17,6 +18,7 @@ var trello = new Trello({
 
 - `pollFrequency`: frequency in milliseconds that the Trello api is polled
 - `minId`: The minimum id value at which to start emitting events (more on this later)
+- `start`: whether or not to start polling the api immediately (default: false)
 - `trello.boards`: array of trello board id's to watch (get them from the URL)
 - `trello.key`: [Get your developer (public) key here](https://trello.com/1/appKey/generate)
 - `trello.token`: Generate your token. `<PUBLIC_KEY>` is the value from the previous step

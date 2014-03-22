@@ -13,13 +13,16 @@ module.exports = function(options){
 			,boards: []
 			// boards: ['WQtuArbW', ...]
 		}
+		,start: true
 	};
 	e = new EventEmitter();
 	config = extend(true, defaults, options);
 	trello = new Trello(config.trello.key, config.trello.token);
-	process.nextTick(function(){
-		start(config.pollFrequency, true);
-	});
+	if (config.start){
+		process.nextTick(function(){
+			start(config.pollFrequency, true);
+		});
+	}
 
 	var self = {
 		on: function(event, listener){
