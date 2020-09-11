@@ -68,6 +68,9 @@ function getBoardActivity(boardId){
 		if (err) {
 			return e.emit('trelloError', err);
 		}
+		if (!Array.isArray(resp)) {
+			throw new Error(resp);
+		}
 		var boardActions = resp.reverse();
 		var actionId;
 		for (var ix in boardActions){
@@ -80,6 +83,7 @@ function getBoardActivity(boardId){
 
 			var eventType = boardActions[ix].type;
 			e.emit(eventType, boardActions[ix], boardId);
+			e.emit('actions', eventType, boardActions[ix], boardId);
 		}
 
 		config.minId = Math.max(config.minId, actionId);
