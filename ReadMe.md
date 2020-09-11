@@ -1,18 +1,22 @@
+# Sunset Notice
+
+I no longer use this project regularly, though based on npm downloads it might still be used by some people. I am archiving the project as I no longer have the time or the interest in maintaining it. If anyone would like to take over ownership, hit me up on twitter @AdamTuttle and I can transfer it to you.
+
 # Trello Events
 
 Poll the Trello API every N milliseconds for activity on your boards. Emits events for each action taken on the specified boards.
 
 ```js
-var Trello = require('trello-events');
+var Trello = require("trello-events");
 var trello = new Trello({
-	pollFrequency: 1000*60
-	,minId: 0
-	,start: true
-	,trello: {
-		boards: ['Nz5nyqZg','...']
-		,key: 'your-trello-api-key'
-		,token: 'your-trello-api-token'
-	}
+  pollFrequency: 1000 * 60,
+  minId: 0,
+  start: true,
+  trello: {
+    boards: ["Nz5nyqZg", "..."],
+    key: "your-trello-api-key",
+    token: "your-trello-api-token",
+  },
 });
 ```
 
@@ -22,8 +26,8 @@ var trello = new Trello({
 - `trello.boards`: array of trello board id's to watch (get them from the URL)
 - `trello.key`: [Get your developer (public) key here](https://trello.com/1/appKey/generate)
 - `trello.token`: Generate your token. `<PUBLIC_KEY>` is the value from the previous step
-    - Short term: `https://trello.com/1/connect?name=trello-events&response_type=token&key=<PUBLIC_KEY>`
-    - No expiration: `https://trello.com/1/connect?name=trello-events&response_type=token&expiration=never&key=<PUBLIC_KEY>`
+  - Short term: `https://trello.com/1/connect?name=trello-events&response_type=token&key=<PUBLIC_KEY>`
+  - No expiration: `https://trello.com/1/connect?name=trello-events&response_type=token&expiration=never&key=<PUBLIC_KEY>`
 
 ## Events Emitted
 
